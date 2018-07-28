@@ -37,6 +37,7 @@
 }
 
 .player-container{
+  display: flex;
   border: .75px;
   border-style: solid;
   border-color: cyan;

@@ -15,21 +15,12 @@ class GameBoard extends Component {
     }
     return xHeaders;
   }
-
-  generateYHeaders = () => {
-
-    let yHeaders = [];
-    for (let row = 0; row < 10; row++){
-      yHeaders.push(<th className="table-header">row</th>)
-    }
-  }
-
   generateGameTiles = () => {
 
     let gameTileRow = [];
     for (let row = 0; row < 10; row++){
         gameTileRow.push(
-          <th className="game-tile">X</th>
+          <th className="game-tile"> </th>
         );
     }
     return gameTileRow;
@@ -50,7 +41,7 @@ class GameBoard extends Component {
 
   render(){
     return(
-      <table className="game-board">
+      <table className="game-board" id="all-tiles">
         <tbody>
           <tr>
             {this.generateXHeaders()}
@@ -63,3 +54,12 @@ class GameBoard extends Component {
 }
 
 export default GameBoard
+
+
+// generateYHeaders = () => {
+//
+//   let yHeaders = [];
+//   for (let row = 0; row < 10; row++){
+//     yHeaders.push(<th className="table-header">row</th>)
+//   }
+// }

@@ -8,7 +8,6 @@ class PlayerContainer extends Component {
   render(){
     return(
     <div className="player-container">
-      player container here
       <GameBoard />
       <GameDetails />
     </div>

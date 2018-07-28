@@ -13,6 +13,7 @@ class GameContainer extends Component {
         GameContainer here
         <Header />
         <PlayerContainer />
+        <PlayerContainer />
       </div>
     )
   }
