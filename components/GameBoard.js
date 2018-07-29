@@ -5,13 +5,7 @@ import GameTile from './GameTile'
 
 class GameBoard extends Component {
 
-  generateTiles = () => {
-
-
-  }
-
   render(){
-    // console.log("opponentBoard in gameboard component", this.props)
     return(
       <table className="game-board" id="all-tiles">
         <tbody className="table-body">

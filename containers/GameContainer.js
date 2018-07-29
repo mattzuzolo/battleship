@@ -9,19 +9,35 @@ class GameContainer extends Component {
     super(props);
 
     this.state = {
-      opponentBoard: staterBoard
+      opponentBoard: staterBoard,
+      currentScore: 0,
+      shipsRemaining: 3
     }
   }
 
+  updateStateElement = (gameTile) => {
+    let currentBoard = this.state.opponentBoard;
+    let clonedBoard = currentBoard;
+    let foundMatchIndex = currentBoard.findIndex((boardInstance) => (
+      boardInstance.id === gameTile.id
+    ));
+    clonedBoard[foundMatchIndex].alreadyAttacked = true;
+    this.setState({ opponentBoard:clonedBoard })
+  }
 
   clickHandler = (gameTile, event) => {
-    console.log("Tile you clicked: ", gameTile)
+    let currentScore = this.state.currentScore;
+    let shipsRemaining = this.state.shipsRemaining;
 
     if (gameTile.shipPresent && gameTile.alreadyAttacked === false){
-      this.state.opponentBoard[gameTile.id - 1].alreadyAttacked = true
+      this.updateStateElement(gameTile);
+      currentScore++;
+      shipsRemaining--;
+      this.setState({currentScore: currentScore});
+      this.setState({shipsRemaining: shipsRemaining});
     }
 
-    else if (gameTile.alreadyAttacked === true) {
+    else if (gameTile.alreadyAttacked && gameTile.shipPresent) {
       alert("You've already successfully attacked this tile")
     }
 
@@ -35,12 +51,14 @@ class GameContainer extends Component {
   }
 
   render(){
-    // console.log(this.state.opponentBoard)
+    console.log("current board at render:", this.state.opponentBoard)
     return(
       <div className="game-container">
         <Header />
         <PlayerContainer id="opponent"
           opponentBoard={this.state.opponentBoard}
+          currentScore={this.state.currentScore}
+          shipsRemaining={this.state.shipsRemaining}
           clickHandler={this.clickHandler}
         />
       </div>
@@ -49,8 +67,3 @@ class GameContainer extends Component {
 }
 
 export default GameContainer
-
-
-let randomShipLocation = function generateRandomCoord() {
-  return Math.floor(Math.random() * Math.floor(100));
-}

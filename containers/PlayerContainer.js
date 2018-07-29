@@ -12,7 +12,10 @@ class PlayerContainer extends Component {
         clickHandler={this.props.clickHandler}
         opponentBoard={this.props.opponentBoard}
       />
-      <GameDetails />
+      <GameDetails
+        currentScore={this.props.currentScore}
+        shipsRemaining={this.props.shipsRemaining}
+      />
     </div>
   )}
 }

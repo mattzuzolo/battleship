@@ -2,7 +2,6 @@
   display:flex;
 }
 
-
 .App {
   text-align: center;
 }
@@ -33,7 +32,6 @@
 }
 
 .game-container{
-
   margin: 05%;
   border: .75px;
   border-style: solid;
@@ -52,7 +50,7 @@
   border: .75px;
   border-style: solid;
   border-color: yellowgreen;
-  background-color: cyan;
+  background-color: #e5e5d8;
 }
 
 .game-board{
@@ -60,6 +58,7 @@
   border: .75px;
   border-style: solid;
   border-color: magenta;
+  flex-wrap: wrap;
 }
 
 .game-tile{
@@ -67,13 +66,14 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  width: 32%;
+
   height: auto;
   border: .75px;
   border-style: solid;
   border-color: white;
   background-color: #4083ef;
-  height: auto;
+  width: 32%;
+  height: 3rem;
 }
 
 .header{
