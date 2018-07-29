@@ -6,11 +6,11 @@ class GameTile extends Component {
   // }
 
   render(){
-    console.log("tile props", this.props)
+    // console.log("tile props:", this.props.gameTile)
     return(
-      <div className="game-tile">
-        X
-      </div>
+        <th className="game-tile" onClick={(event) => this.props.clickHandler(this.props.gameTile)}>
+          x
+        </th>
     )
   }
 

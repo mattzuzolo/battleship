@@ -8,7 +8,10 @@ class PlayerContainer extends Component {
   render(){
     return(
     <div className="player-container">
-      <GameBoard />
+      <GameBoard
+        clickHandler={this.props.clickHandler}
+        opponentBoard={this.props.opponentBoard}
+      />
       <GameDetails />
     </div>
   )}
