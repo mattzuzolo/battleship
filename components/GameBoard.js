@@ -10,7 +10,7 @@ class GameBoard extends Component {
     let xHeaders = [];
 
     for (let col = 1; col < 11; col++){
-        xHeaders.push(<th className="table-header" colId={col}>{col}</th>)
+        xHeaders.push(<th key={UUID()} className="table-header">{col}</th>)
 
     }
     return xHeaders;
@@ -20,7 +20,7 @@ class GameBoard extends Component {
     let gameTileRow = [];
     for (let row = 0; row < 10; row++){
         gameTileRow.push(
-          <th className="game-tile"> </th>
+          <th key={UUID()} className="game-tile"> </th>
         );
     }
     return gameTileRow;
@@ -30,7 +30,7 @@ class GameBoard extends Component {
     let allRows = [];
     for (let row = 0; row < 10; row++){
       allRows.push(
-        <tr>
+        <tr key={UUID()}>
           {this.generateGameTiles()}
         </tr>
       );

@@ -10,10 +10,9 @@ class GameContainer extends Component {
   render(){
     return(
       <div className="game-container">
-        GameContainer here
         <Header />
-        <PlayerContainer />
-        <PlayerContainer />
+        <PlayerContainer id="opponent"/>
+        <PlayerContainer id="user"/>
       </div>
     )
   }
